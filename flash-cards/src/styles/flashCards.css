@@ -1,0 +1,13 @@
+.flash-card {
+  width: 29%;
+  height: 100px;
+  /* background-color: rgb(237, 142, 40); */
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: 500;
+  padding: 10px;
+}
