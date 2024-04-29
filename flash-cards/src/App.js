@@ -38,10 +38,19 @@ const questions = [
 ];
 
 function App() {
+  let [selectedId, setSelectedId] = useState(null);
+  function handleClickinApp(id) {
+    setSelectedId((selectedId = id));
+  }
   return (
     <div className="app">
       {questions.map((question) => (
-        <FlashCards question={question} />
+        <FlashCards
+          key={question.id}
+          question={question}
+          selectedId={selectedId}
+          handleClickinApp={handleClickinApp}
+        />
       ))}
     </div>
   );
