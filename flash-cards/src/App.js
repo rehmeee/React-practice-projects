@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import FlashCards from "./components/FlashCards";
 import { useState } from "react";

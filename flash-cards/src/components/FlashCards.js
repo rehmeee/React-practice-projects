@@ -1,9 +1,6 @@
-import { useState } from "react";
 import "../styles/flashCards.css";
 
 export default function FlashCards({ question, handleClickinApp, selectedId }) {
-  let [text, setText] = useState(question.question);
-  let [bgcolor, setColor] = useState("yellow");
   function handleClick() {
     // this way is only to rotate the question card
     // if (text === question.question) {
