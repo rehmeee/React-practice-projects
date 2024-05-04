@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Item from './components/Item';
 import { useState } from 'react';
@@ -22,16 +21,11 @@ const faqs = [
 ];
 
 function App() {
-  const [checkClicked, setCheckeClicked] = useState(false);
-  function handleSetCheckeClick(id){
-    console.log(id);
-  }
-  let i = 10;
+ // this is just for a key to reduce the error given by the react
   let j = 1;
   return (
     <div className = "accordion">
-      {faqs.map((question)=> <Item key={i++} title = {question.title} id = {j++} checkClicked={checkClicked} handleCheckclicked = {handleSetCheckeClick} text = {question.text}/>)}
-    
+     {faqs.map((question) => <Item title={question.title} text = {question.text} key={j++}/>)}
     </div>
   );
 }

@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Item({title, text,id,checkClicked,handleCheckclicked}) {
+function Item({title, text,key}) {
+    const [showAnswer, setshowAnswer] = useState(true);
   return (
-    <div className = "item" onClick={()=> handleCheckclicked(id)}>
-        <span>{id}</span>
-        <h3>{title}</h3>
-        {checkClicked ? <p>{text}</p>: ""}
-        <span>+</span>
+    <div className = "item">
+        <span>{key}</span>
+      <h2>{title}</h2>
+      {showAnswer ? <p>{text}</p>: ""}
+      <span>{showAnswer ? "-" : "+"}</span>
         
     </div>
   )
