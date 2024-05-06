@@ -62,6 +62,9 @@ ul {
 .text{
   font-size: medium;
 }
+.open{
+  color: green;
+}
 /*
 .content-box ul {
   color: #868e96;

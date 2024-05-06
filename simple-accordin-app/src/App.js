@@ -24,18 +24,49 @@ function App() {
   }
   // this is just for a key to reduce the error given by the react
   return (
-    
+    // now this is the simple way to pass the data to the children
+    // ****** you can uncommit to check the changes
+    // ### remember to add the html segement
+    // <div className="accordion">
+    //   {faqs.map((question, i) => (
+    //     <Item
+    //       curOpen={curOpen}
+    //       onClick={handleCurrentOpen}
+    //       title={question.title}
+    //       text={question.text}
+    //       key={i}
+    //       itemNo={i}
+    //     />
+    //   ))}
+    // </div>
+    // here we are going to pass the data to the children components through the children props so
     <div className="accordion">
       {faqs.map((question, i) => (
         <Item
           curOpen={curOpen}
           onClick={handleCurrentOpen}
           title={question.title}
-          text={question.text}
           key={i}
           itemNo={i}
-        />
+        >
+          {question.text}
+        </Item>
       ))}
+      {/* // so here i like to create a new question by children props */}
+      <Item
+        curOpen={curOpen}
+        onClick={handleCurrentOpen}
+        title="Test 1"
+        key="test 1"
+        itemNo={12}
+      >
+       <p>Test 1</p>
+       <ul>
+        <li>Rehman ali</li>
+        <li>Usman </li>
+        <li>Maan</li>
+       </ul>
+      </Item>
     </div>
   );
 }
