@@ -1,18 +1,20 @@
-import React, { useState } from 'react'
 
-function Item({title, text, itemNo}) {
-    const [showAnswer, setshowAnswer] = useState(false);
-    console.log(itemNo);
+function Item({title, text, itemNo,curOpen,onClick}) {
+  // now we lift the state above to just show the one item at at a time so we dont need of this state
+    //const [showAnswer, setshowAnswer] = useState(false);
     function handleClick(){
-      setshowAnswer(!showAnswer)
+      onClick(itemNo);
     }
+    //console.log("the item no is " + itemNo);
+    const isOpen = itemNo === curOpen;
+    console.log("currently open is "+curOpen);
   return (
     <ul className = "item" onClick={handleClick}>
 
-        <li className='number'>{itemNo}</li>
+        <li className='number'>{itemNo > 9 ? itemNo +1 : `0${itemNo +1}`}</li>
       <li className="title">{title}
-      <p className='text'>{showAnswer ? `${text}` : ""}</p></li>
-      <li className='icon'>{showAnswer ? "-" : "+"}</li>
+      <p className='text'>{isOpen? `${text}` : ""}</p></li>
+      <li className='icon'>{isOpen ? "-" : "+"}</li>
         
     </ul>
   )
