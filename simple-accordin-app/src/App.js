@@ -25,7 +25,7 @@ function App() {
   let j = 1;
   return (
     <div className = "accordion">
-     {faqs.map((question) => <Item title={question.title} text = {question.text} key={j++}/>)}
+     {faqs.map((question) => <Item title={question.title} text = {question.text} key={Date.now()} itemNo = {j++}/>)}
     </div>
   );
 }
