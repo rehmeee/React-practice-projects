@@ -1,9 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Calculator from './components/Calculator';
 
 function App() {
   return (
-    <div> rehman ali </div>
+    <div> 
+      <Calculator/>
+       </div>
   );
 }
 
