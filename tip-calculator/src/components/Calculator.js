@@ -1,5 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import Bill from "./Bill";
+import Tip from "./Tip";
+import Total from "./Total";
+import ResetButton from "./ResetButton";
 function Calculator() {
   const [billValue, setBillValue] = useState(null);
   const [myTipSugestion, setmyTipSugestion] = useState(0);
@@ -32,38 +36,32 @@ function Calculator() {
 
   return (
     <div>
-      <span>How much is the bill?</span>
-      <input
-        type="text"
-        name=""
-        id=""
-        placeholder="Enter your bill"
-        value={billValue}
-        onChange={(e) => setBillValue(Number(e.target.value))}
-      />
-      <br />
+     <Bill billValue = {billValue} setBillValue={setBillValue}/>
+      <Tip>
       <span>How much you like the service?</span>
       <select name="" id="" value={myTipSugestion} onChange={(e)=> handleMySelect(e)}>
         <option value={0}> Dissatisfied 0%</option>
         <option value={5}> it was okay 5%</option>
         <option value={10}> it was good 10%</option>
         <option value={25}> its amazing 25%</option>
-      </select>
-      <br />
+      </select></Tip>
+      <Tip>
       <span>How much your friend like the service?</span>
       <select name="" id="" value={friendTipSugestion} onChange={(e)=>handleFriendSelect(e)}>
         <option value={0}> Dissatisfied 0%</option>
         <option value={5}> it was okay 5%</option>
         <option value={10}> it was good 10%</option>
         <option value={25}> its amazing 25%</option>
-      </select>
-    {billValue >0? <div className="res">
+      </select></Tip>
+    
+    {billValue >0? <Total> <div className="res">
         <span>so your total bill:</span>
         {billValue + avg }$ 
         <span>({billValue}$ + {avg}$ tip)</span>
         <br />
-        <button onClick={handleReset}>Reset</button>
-        </div> : "" }
+        <ResetButton>
+        <button onClick={handleReset}>Reset</button></ResetButton>
+        </div></Total>: "" }
 
     </div>
   );
