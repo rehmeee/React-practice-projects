@@ -18,13 +18,13 @@ function Friend({ balance, id, name, imgurl,handleFriendSelection,selectedFriend
       {balance < 0 && (
         <p className="red">
           {" "}
-          you owe {name} {Math.abs(balance)} $
+          you owe {name} {Math.abs(balance)}$
         </p>
       )}
       {balance > 0 && (
         <p className="green">
           {" "}
-            {name} owes you  {Math.abs(balance)} $
+            {name} owes you  {Math.abs(balance)}$
         </p>
       )}
       {balance === 0 && (
