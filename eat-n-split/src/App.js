@@ -6,19 +6,19 @@ import { useState } from "react";
 const initialFriends = [
   {
     id: 118836,
-    name: "Clark",
+    name: "Asad",
     image: "https://i.pravatar.cc/48?u=118836",
     balance: -7,
   },
   {
     id: 933372,
-    name: "Sarah",
+    name: "Alina",
     image: "https://i.pravatar.cc/48?u=933372",
     balance: 20,
   },
   {
     id: 499476,
-    name: "Anthony",
+    name: "Farhad",
     image: "https://i.pravatar.cc/48?u=499476",
     balance: 0,
   },
@@ -28,8 +28,19 @@ export default function App() {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [showAddFriendForm, setShowAddFriendForm] = useState(false);
+  const[selectedFriend, setSelectedFriend] = useState(null);
   function handleShowAddFriend() {
     setShowAddFriendForm((show) => !show);
+  }
+  function handleFriendSelection(selectedFriend) {
+    if(selectedFriend != null) {
+      
+      setSelectedFriend(selectedFriend);
+    }
+    else {
+      setSelectedFriend(null)
+    }
+    console.log(selectedFriend);
   }
   function addFriendToList(name,imageUrl) {
     console.log("addFriendToList is called ");
@@ -37,11 +48,15 @@ export default function App() {
     console.log(friends);
     setImageUrl('');
     setName("");
+    setShowAddFriendForm(false);
   }
+  
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendList initialFriends={friends} />
+        <FriendList initialFriends={friends} handleFriendSelection={handleFriendSelection}
+        selectedFriend={selectedFriend}
+        />
         {showAddFriendForm && (
           <FormAddFriend
             name={name}
@@ -55,7 +70,7 @@ export default function App() {
           {showAddFriendForm ? "Close " : "Add Friends"}
         </Button>
       </div>
-      <FromSplitBill />
+      {selectedFriend && <FromSplitBill friend = {selectedFriend}/>}
     </div>
   );
 }

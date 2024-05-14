@@ -4,10 +4,10 @@ import Friend from './Friend';
 
 
 
-function FriendList({initialFriends}) {
+function FriendList({initialFriends,handleFriendSelection,selectedFriend}) {
   return (
     <ul>
-        {initialFriends.map((friend)=><Friend key={friend.id} id = {friend.id} name = {friend.name} imgurl = {friend.image} balance = {friend.balance}/>)}
+        {initialFriends.map((friend)=><Friend key={friend.id} id = {friend.id} handleFriendSelection={handleFriendSelection} selectedFriend={selectedFriend} name = {friend.name} imgurl = {friend.image} balance = {friend.balance}/>)}
     </ul>
   )
 }

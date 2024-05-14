@@ -1,7 +1,16 @@
 import React from "react";
 import Button from "./Button";
 
-function Friend({ balance, id, name, imgurl }) {
+function Friend({ balance, id, name, imgurl,handleFriendSelection,selectedFriend }) {
+  function handleFormSplit(){
+    if(selectedFriend !=null &&  selectedFriend.name === name){
+      handleFriendSelection(null);
+    }
+    else {
+      let selectedFriend = {id, name , imgurl, balance};
+      handleFriendSelection(selectedFriend);
+    }
+  }
   return (
     <li>
       <img src={imgurl} alt={name} />
@@ -24,7 +33,7 @@ function Friend({ balance, id, name, imgurl }) {
           you and {name} are even
         </p>
       )}
-      <Button>Select</Button>
+      <Button onClick={handleFormSplit}>{selectedFriend !=null ? (selectedFriend.name === name ? "close" : "Select" ): "Select" }</Button>
     </li>
   );
 }
