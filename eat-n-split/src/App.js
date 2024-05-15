@@ -29,6 +29,7 @@ export default function App() {
   const [imageUrl, setImageUrl] = useState("");
   const [showAddFriendForm, setShowAddFriendForm] = useState(false);
   const[selectedFriend, setSelectedFriend] = useState(null);
+  // const [balance, setBalance] = useState(0);
   function handleShowAddFriend() {
     setShowAddFriendForm((show) => !show);
   }
@@ -41,6 +42,9 @@ export default function App() {
       setSelectedFriend(null)
     }
     console.log(selectedFriend);
+  }
+  function handleSetBalance(id, balance ){
+    friends.map((friend)=> friend.id === id ? {...friend, balance:balance}: friend)
   }
   function addFriendToList(name,imageUrl) {
     console.log("addFriendToList is called ");
@@ -70,7 +74,7 @@ export default function App() {
           {showAddFriendForm ? "Close " : "Add Friends"}
         </Button>
       </div>
-      {selectedFriend && <FromSplitBill friend = {selectedFriend}/>}
+      {selectedFriend && <FromSplitBill friend = {selectedFriend} handleSetBalance={handleSetBalance}/>}
     </div>
   );
 }

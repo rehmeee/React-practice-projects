@@ -1,21 +1,28 @@
 import React from "react";
 import Button from "./Button";
 import { useState } from "react";
-function FromSplitBill({friend}) {
+function FromSplitBill({friend,handleSetBalance}) {
   const [bill, setBill] = useState(0);
   const [yourExpense, setYourEXpense] = useState(0);
   const [payingBill, setPayingBill] = useState('you');
   function handleSplit(){
+    let balance;
     if(payingBill === "you" && friend.balance <0){
-      let balance =friend.balance +  bill- yourExpense;
-      console.log(balance);
+       balance =friend.balance +  bill- yourExpense;
       
     }
-    else {
-      let balance = friend.balance - bill- yourExpense
-      console.log(balance);
+    else if(payingBill === "you" && friend.balance >=0){
+       balance =friend.balance +  (bill- yourExpense);
+      
+    }
+    else if(payingBill === `${friend.name}` && friend.balance<0 ){
+       balance = friend.balance - yourExpense
 
     }
+    else {
+       balance = friend.balance - yourExpense
+    }
+    handleSetBalance(friend.id,balance)
   }
 
 
