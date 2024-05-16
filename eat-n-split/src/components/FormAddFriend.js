@@ -4,6 +4,7 @@ import Button from "./Button";
 function FormAddFriend({ name, setName, imageUrl, setImageUrl,addFriendToList }) {
   function handleFormSubmit(e) {
     e.preventDefault();
+    if(!name || !imageUrl) return;
     addFriendToList(name,imageUrl)
   }
   return (

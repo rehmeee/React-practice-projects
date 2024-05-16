@@ -12,7 +12,7 @@ function Friend({ balance, id, name, imgurl,handleFriendSelection,selectedFriend
     }
   }
   return (
-    <li>
+    <li className={selectedFriend != null ? id === selectedFriend.id ? "selected" : "" : ""}>
       <img src={imgurl} alt={name} />
       <h3>{name}</h3>
       {balance < 0 && (
