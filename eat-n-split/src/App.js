@@ -23,8 +23,8 @@ const initialFriends = [
     balance: 0,
   },
 ];
-let friends = initialFriends;
 export default function App() {
+  const[friends,setFriends] = useState(initialFriends);
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [showAddFriendForm, setShowAddFriendForm] = useState(false);
@@ -44,11 +44,12 @@ export default function App() {
     console.log(selectedFriend);
   }
   function handleSetBalance(id, balance ){
-    friends.map((friend)=> friend.id === id ? {...friend, balance:balance}: friend)
+  setFriends((friends)=> friends.map(friend=> friend.id === id ? {...friend, balance}: friend))
+  setSelectedFriend(null);
   }
   function addFriendToList(name,imageUrl) {
     console.log("addFriendToList is called ");
-    friends = [...friends, {id : Date.now(),name: name, image : imageUrl, balance : 0}];
+    setFriends(friends => [...friends, {id:Date.now(),name,image:imageUrl,balance:0 }])
     console.log(friends);
     setImageUrl('');
     setName("");

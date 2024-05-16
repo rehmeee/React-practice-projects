@@ -3,8 +3,8 @@ import Button from "./Button";
 
 function FormAddFriend({ name, setName, imageUrl, setImageUrl,addFriendToList }) {
   function handleFormSubmit(e) {
-    addFriendToList(name,imageUrl)
     e.preventDefault();
+    addFriendToList(name,imageUrl)
   }
   return (
     <form className="form-add-friend">
