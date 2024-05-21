@@ -65,7 +65,9 @@ export default function App() {
 
   return (
     <>
+    // nav bar component 
       <Nav query ={query} setQuery ={setQuery} movies= {movies}/>
+      // main component
     <Main setIsOpen1={setIsOpen1} isOpen1={isOpen1} movies={movies} setIsOpen2={setIsOpen2} isOpen2={isOpen2} watched ={watched} avgImdbRating={avgImdbRating} avgUserRating={avgUserRating} avgRuntime={avgRuntime}/>
           </>
   );
