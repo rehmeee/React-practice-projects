@@ -2,6 +2,7 @@ import React from 'react'
 
 function Main( {isOpen1, isOpen2, setIsOpen1, setIsOpen2, watched, avgImdbRating, avgRuntime, avgUserRating , movies}) {
   return (
+    // this is main component
     <main className="main">
         <div className="box">
           <button
