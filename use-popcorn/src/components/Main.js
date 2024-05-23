@@ -39,6 +39,7 @@ function Main( {isOpen1, isOpen2, setIsOpen1, setIsOpen2, watched, avgImdbRating
           {isOpen2 && (
             <>
               <div className="summary">
+                // heading
                 <h2>Movies you watched</h2>
                 <div>
                   <p>
