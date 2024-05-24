@@ -7,20 +7,16 @@ import Main from "./components/Main";
 
 
 export default function App() {
-  // const [query, setQuery] = useState("");
-  // const [movies, setMovies] = useState(tempMovieData);
-  // const [watched, setWatched] = useState(tempWatchedData);
-  // const [isOpen1, setIsOpen1] = useState(true);
-  // const [isOpen2, setIsOpen2] = useState(true);
 
-  // const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
-  // const avgUserRating = average(watched.map((movie) => movie.userRating));
-  // const avgRuntime = average(watched.map((movie) => movie.runtime));
-
+const [foundResults, setFoundResults] = useState(0);
+// this function is to handle how many results are found in search
+function handleFoundResults(res){
+  setFoundResults(res)
+}
   return (
     <>
     {/* // nav bar component  */}
-      <Nav/>
+      <Nav foundResults={foundResults} />
       {/* // main component */}
     <Main />
           </>
