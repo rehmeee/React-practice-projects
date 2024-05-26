@@ -1,6 +1,12 @@
 import { useState } from "react";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
+import NumResults from "./components/NumResults";
+import Logo from "./components/Logo";
+import Search from "./components/Search";
+import ListBox from "./components/ListBox";
+import WatchedMovies from "./components/WatchedMovies";
+import MovieList from "./components/MovieList";
 const tempMovieData = [
   {
     imdbID: "tt1375666",
@@ -32,17 +38,24 @@ export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
 
 
-const [foundResults, setFoundResults] = useState(0);
-// this function is to handle how many results are found in search
-function handleFoundResults(res){
-  setFoundResults(res)
-}
+
   return (
     <>
     {/* // nav bar component  */}
-      <Nav foundResults={foundResults} movies={movies} />
+    {/* {so here we simple use the copmonent composition to find avoid the prop drilling} */}
+      <Nav  >
+        <Logo/>
+        <Search/>
+        <NumResults movies={movies}/>
+      </Nav>
       {/* // main component */}
-    <Main movies={movies}/>
+    <Main >
+      <ListBox>
+        <MovieList movies={movies}/>
+       
+      </ListBox>
+      <WatchedMovies/>
+    </Main>
           </>
   );
 }
