@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import MovieList from './MovieList';
-
+// here we added children props
 function ListBox({children}) {
     const [isOpen1, setIsOpen1] = useState(true)
   return (
