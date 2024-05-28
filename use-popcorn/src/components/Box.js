@@ -11,7 +11,9 @@ function ListBox({children}) {
           >
             {isOpen ? "–" : "+"}
           </button>
+          {/* remember here we render the children in simple as it is not nesserey to use the curly braces because we are already in javascript mode */}
           {isOpen && (
+
             children
           )}
         </div>
