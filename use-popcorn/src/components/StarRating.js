@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+// here we use the props Type to check the type of props
+import PropTypes from "prop-types"
 const styleOuterBox={
     display: 'flex',
     alignItems: 'center',
@@ -9,7 +11,12 @@ const styleStarBox = {
     gap: "5px"
 
 }
+StarRating.propTypes = {
+    maxRating  : PropTypes.number,
+    size : PropTypes.number,
+    color : PropTypes.string,
 
+}
 function StarRating({maxRating = 5, size = 48, color = "#fcc149"}) {
     const[star, setStar] = useState(0)
     const [tempRating, setTempRating] = useState(0)
@@ -33,6 +40,7 @@ function StarRating({maxRating = 5, size = 48, color = "#fcc149"}) {
             full ={tempRating ? tempRating>=i +1 : star>= i + 1}
             color= {color }
             size = {size}
+            key={i}
            />))}
         </div>
         <p style={styleParagraph}>
