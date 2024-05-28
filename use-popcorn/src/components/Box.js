@@ -12,7 +12,7 @@ function ListBox({children}) {
             {isOpen ? "–" : "+"}
           </button>
           {isOpen && (
-            {children}
+            children
           )}
         </div>
 
