@@ -1,18 +1,17 @@
 import React from 'react'
 import { useState } from "react";
-import MovieList from './MovieList';
 // here we added children props
 function ListBox({children}) {
-    const [isOpen1, setIsOpen1] = useState(true)
+    const [isOpen, setIsOpen] = useState(true)
   return (
     <div className="box">
           <button
             className="btn-toggle"
-            onClick={() => setIsOpen1((open) => !open)}
+            onClick={() => setIsOpen((open) => !open)}
           >
-            {isOpen1 ? "–" : "+"}
+            {isOpen ? "–" : "+"}
           </button>
-          {isOpen1 && (
+          {isOpen && (
             {children}
           )}
         </div>

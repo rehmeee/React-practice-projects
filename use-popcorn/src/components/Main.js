@@ -1,16 +1,10 @@
-import React from 'react'
-import ListBox from './ListBox'
-import WatchedMovies from './WatchedMovies'
+import React from "react";
 
-function Main({children} ) {
-
+function Main({ children }) {
   return (
     // this is main component
-    <main className="main">
-       {children}
-      </main>
-
-  )
+    <main className="main">{children}</main>
+  );
 }
 
-export default Main
+export default Main;
