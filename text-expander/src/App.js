@@ -1,23 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-
+import TextExpander from './components/TextExpander';
+import { useState } from "react";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = "">
+      <TextExpander wordsNumCollaps ={20} byDefaultShow={false} showText = "show Text" hideText = "Show Less  " >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium recusandae eligendi animi corporis iusto amet aspernatur libero, enim at, magni eum temporibus vitae ipsa.
+      </TextExpander>
     </div>
   );
 }
