@@ -6,7 +6,7 @@ function App() {
   return (
     <div className = "">
       <TextExpander wordsNumCollaps ={20} byDefaultShow={false} showText = "show Text" hideText = "Show Less  " >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium recusandae eligendi animi corporis iusto amet aspernatur libero, enim at, magni eum temporibus vitae ipsa.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium recusandae eligendi animi corporis iusto amet aspernatur libero, enim at, magni eum temporibus 
       </TextExpander>
     </div>
   );
