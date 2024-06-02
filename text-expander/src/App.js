@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import TextExpander from './components/TextExpander';
-import { useState } from "react";
 function App() {
   return (
     <div className = "">
