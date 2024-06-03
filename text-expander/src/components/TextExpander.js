@@ -3,7 +3,7 @@ import { useState } from "react";
 function TextExpander({children,showText,byDefaultShow, hideText, wordsNumCollaps}) {
     const [show, setShow] = useState(byDefaultShow)
     let words = children.split( " ")
-    console.log(words);
+    
     console.log(children);
   return (
     <div>
